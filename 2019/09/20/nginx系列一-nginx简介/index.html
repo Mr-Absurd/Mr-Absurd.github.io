@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     
     
-    <title>Hello World | Hexo</title>
+    <title>Nginx系列一 Nginx简介 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="java">
+    <meta name="keywords" content="Nginx,代理,负载均衡">
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css?v=1.4.3">
@@ -132,7 +132,7 @@
           <i class="icon icon-lg icon-navicon"></i>
         </a>
         <div class="flex-col header-title ellipsis">
-            <span>Hello World</span>
+            <span>Nginx系列一 Nginx简介</span>
             
         </div>
         
@@ -145,15 +145,15 @@
 <header class="content-header post-header">
     <img src="/img/banner.jpg" class="header-bg">
     <div class="container fade-scale">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">Nginx系列一 Nginx简介</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-07-30T11:59:58.643Z" itemprop="datePublished" class="page-time">
-  2019-07-30
+                <time datetime="2019-09-20T04:15:21.000Z" itemprop="datePublished" class="page-time">
+  2019-09-20
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Nginx/">Nginx</a></li></ul>
 
             
         </h5>
@@ -178,15 +178,15 @@
 
 
 <div class="container body-wrap">
-    <article id="post-hello-world"
+    <article id="post-nginx系列一-nginx简介"
   class="post-article article-type-post" itemprop="blogPost">
     <div class="post-card">
-        <h1 class="post-card-title">Hello World</h1>
+        <h1 class="post-card-title">Nginx系列一 Nginx简介</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-07-30 19:59:58" datetime="2019-07-30T11:59:58.643Z"  itemprop="datePublished">2019-07-30</time>
+            <time class="post-time" title="2019-09-20 12:15:21" datetime="2019-09-20T04:15:21.000Z"  itemprop="datePublished">2019-09-20</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Nginx/">Nginx</a></li></ul>
 
 
 
@@ -199,19 +199,31 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​        Nginx是什么?百度一下.看一下词条.正向代理,反向代理,负载均衡等等一系列的专业名词迎面而上,给人一种哇塞,这是什么,好高级,so NB的样子,确实Nginx可以说是一个功能十分强大的工具.但是要去掌握它,并不是什么很困难的事.因为他是一个工具,就像一个电脑,电脑很强大,但是你不去需要知道电脑这些功能 这么实现的,你只要会用就行了.接下来就给大家是稍微说明下,一些名词的含义.</p>
+<h2 id="何为代理"><a href="#何为代理" class="headerlink" title="何为代理"></a>何为代理</h2><p>​            先理解下什么叫代理,字面意思让别人帮你做.取个栗子.今天中午吃饭,你想吃肯德基,又不想自己去,叫了个美团,美团把饭给你送过来.这就是代理,他帮你把饭送过来.这就是代理.</p>
+<h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><pre><code>正向代理,你通过美团外卖,这就是正向代理.你相当于客户端,美团就是Nginx,肯德基是服务端.题外话插一句,学Nginx就像学这么通过美团叫外卖.不需要知道美团是这么运作的,会用就行,更何况这个工具很很好用.</code></pre><figure class="image-box">
+                <a rel=Nginx系列一 Nginx简介 href="nginx系列一-nginx简介\图1.png" title="" data-fancybox="images"><img src="nginx系列一-nginx简介\图1.png" alt title class></a>
+                <p></p>
+            </figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>上图就是一个正向代理的过程.</p>
+<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p>​        反向代理就是和正向代理方向相反.肯德基给你送饭,让美团的骑手去给你送,这就叫反向代理.如图</p>
+<figure class="image-box">
+                <a rel=Nginx系列一 Nginx简介 href="nginx系列一-nginx简介\图2.png" title="" data-fancybox="images"><img src="nginx系列一-nginx简介\图2.png" alt title class></a>
+                <p></p>
+            </figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>​        提到反向代理就不得不说负载均衡.同样的我们用去饭店吃饭做例子,饭店有3个大厨,会做得东西都一样.一下来了3个客人,点了3份番茄炒西红柿.这么在最短时间内满足客人需求,3个大厨一人做一份.这就是负载均衡.</p>
+<h2 id="都该怎么用"><a href="#都该怎么用" class="headerlink" title="都该怎么用"></a>都该怎么用</h2><p>​        <strong>正向代理与反向代理最大的区别是正向隐藏客户端,反向隐藏服务端.</strong></p>
+<p>​        现在举几个例子</p>
+<p>​        <strong>正向代理应用:</strong></p>
+<p>​        <strong>隐藏真实客户请求</strong></p>
+<p>​        客户端A访问服务端B,但是又不想B知道是A访问的,这时候通过Nginx去代理访问B,这样B只能知道这是Nginx请求的,但是实际并不知道那个客户端去发出的请求</p>
+<p>​        <strong>内网访问外网</strong></p>
+<p>​        内外网是无法直接联系的.但是有些时候不得不去访问外网.但是直接开通访问权限,那样就没有意义将应用部署到内网.    单独配一台服务器让他既能够访问外(10.10.4.55)网又能访问内网.   将部署应用的服务器(10.10.4.59)放到内网.  将55设置成只能互相ping通59和能访问外网.  将Nginx部署到55.这样59就能通过55去访问外网<strong>(Nginx可以限制那些请求去转发)</strong>,外网通过55去响应59.不会将应用直接暴露到外网.</p>
+<p>​        <strong>反向代理:</strong></p>
+<p>​        <strong>一般与负载均衡连用</strong></p>
+<p>​        考虑一下场景,假设一个应用的用户访问量是1000,一台服务器的负载量在500,也就是说一个服务器能应付500人,但是却有1000人去访问,怎么办.部署两台服务器,去处理这些人.Nginx分配这些人访问哪个服务器.这就是传说中的处理高并发的负载均衡.</p>
 
         </div>
         
@@ -219,12 +231,12 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-08-02T00:53:20.169Z" itemprop="dateUpdated">2019-08-02 08:53:20</time>
+    最後更新時間：<time datetime="2019-09-20T08:36:40.251Z" itemprop="dateUpdated">2019-09-20 16:36:40</time>
 </span><br>
 
 
         
-        转载注明出处，原文地址：<a href="/2019/07/30/hello-world/" target="_blank" rel="external">http://mr-absurd.com/2019/07/30/hello-world/</a>
+        转载注明出处，原文地址：<a href="/2019/09/20/nginx系列一-nginx简介/" target="_blank" rel="external">http://mr-absurd.com/2019/09/20/nginx系列一-nginx简介/</a>
         
     </div>
     <footer>
@@ -238,7 +250,7 @@
         
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代理/">代理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/负载均衡/">负载均衡</a></li></ul>
 
             <div class="page-share-wrap">
     
@@ -247,7 +259,7 @@
     <ul class="reset share-icons">
       
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/07/30/hello-world/&title=《Hello World》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/09/20/nginx系列一-nginx简介/&title=《Nginx系列一 Nginx简介》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -259,7 +271,7 @@
       </li>
       
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/07/30/hello-world/&title=《Hello World》 — Hexo&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/09/20/nginx系列一-nginx简介/&title=《Nginx系列一 Nginx简介》 — Hexo&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -282,16 +294,16 @@
         
     </div>
     
-<nav class="post-nav flex-row flex-justify-between">
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
-    <div class="prev">
-      <a href="/2019/09/20/前言/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+
+  
+    <div class="next">
+      <a href="/2019/09/20/前言/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">前言</h4>
       </a>
     </div>
-  
-
   
 </nav>
 
@@ -301,7 +313,7 @@
         <aside class="post-widget">
             <nav class="post-toc-wrap" id="post-toc">
                 <strong>目录</strong>
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#何为代理"><span class="post-toc-number">2.</span> <span class="post-toc-text">何为代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正向代理"><span class="post-toc-number">3.</span> <span class="post-toc-text">正向代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反向代理"><span class="post-toc-number">4.</span> <span class="post-toc-text">反向代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#负载均衡"><span class="post-toc-number">5.</span> <span class="post-toc-text">负载均衡</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#都该怎么用"><span class="post-toc-number">6.</span> <span class="post-toc-text">都该怎么用</span></a></li></ol>
             </nav>
             <div class="toc-bar"><div>
         </aside>
@@ -357,7 +369,7 @@
     <ul class="reset share-icons">
       
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/07/30/hello-world/&title=《Hello World》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/09/20/nginx系列一-nginx简介/&title=《Nginx系列一 Nginx简介》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -369,7 +381,7 @@
       </li>
       
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/07/30/hello-world/&title=《Hello World》 — Hexo&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/09/20/nginx系列一-nginx简介/&title=《Nginx系列一 Nginx简介》 — Hexo&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -381,7 +393,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aMXLDMAwEQP//00qbItbckVRmKC6rjGxLXBUIQODzidf1a327knz//rf391ywMDAwtmVct+vbd1a9iPv7J3vDwMA4h/Htwfkj26B5f4d8bxgYGBgJYywRzJ+FgYGBsSrgrr2CgYGBMVbEJrfLA+v9Hh6sxTEwMDZk5Idl///3I/0NDAyMrRhXufJAOd/4LHaFgYHxakYe4PKUMfn0kaYCBgbGqxlJItge/c+UxPkAWZ3PYmBgbMjIrXnzYCYEJ6Q/7oyBgXEko03mxlqe7THfVyQGBsZhjLaV2I5ftGE6uo6BgfFqRpIOzg9AtAE3byRgYGCcxmgLyLbpmPyqbQBEjQEMDIzNGatCZD5G1jZHiyIWAwPjAEZeauYhdSagF4MaGBgYr2aMla955dg2L/NMFgMD4xzG/CPz8a/20+JfAgYGxgGMsXZmO4oxVipHJTQGBsbxjHwAov1VncMmuS0GBsbrGIMHW+Xm2gRxcPwCAwPjGEbesMy3MrPRonmAgYFxDCMvTfPjtrHvJGwMDIzTGGPH+u3oWDKokSeade8UAwNjQ8ZVrvYVjBXD+WvFwMA4gZGvsYe1JW5eHrfBGgMDY3dGO+DVDk+0dxtLVTEwME5grDr6HyPNlMEYGBgY7ZBWW6y2p4PFzAgGBsbxjLxVeR+Ox64vC7gYGBhbMZ4Ym2gDaN7axMDAOI2Rl475LQbTu0XJJQYGxosYP8QS+gjjP8i2AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aS27DMAxFUe9/0+60QBPlPlIpYOpqFDQf6XjAUiSvC6/71/r7l8676102LxkyZDyWcS/Xu8+sf4E8iM7jeLGLDBkyDmC823j9mXU4Xu+yhvGzyZAhQ0bK4MGXB1wZMmTISBkbtgSBWIYMGTJql9ha1asD+8pdXIYMGQ9k8MP9/+uv9DdkyJDxKMYdrk7fsNYeQKeSIUPGaAYPcLWBCd7OTNM+GTJknMOoDTfwctiub31oiMqQIWM0gxS5SDAtRvow+CKMDBkyDmOkYxbku0HorLVFZciQMY6RNib7Axlp+I6DrAwZMsYx0tI8/9Y6HSQPotVrlSFDxjgGL2nxyyq5HteuqW8/L0OGjKGMlr7USNiVXL5oYcqQIWMoIx10SMv6tSIdf2RX8LYMGTLmMHg5jF9f0+Zlmm7KkCHjBEY6bMHTuPSgm3sdMmTIGMHgpf80EH+jRRr0NGTIkDGUwYtc/PpKAjS/+ga5rQwZMgYxOofjV99O6S0YNZMhQ8YBjHS0ggfNNFksluFkyJBxAIP8HF83WP2rb3APliFDxghGrZVYC6w8cWwNW8iQIWME4w4XZ6fDFrwh+iG3lSFDxjjGrlSvP0jBRzpaaasMGTIey0iPyINpLYlMzyBDhoxzGHs3q6WDG66yMmTIkBEWy/iD4A0JNBYmQ4aM4xm1NG4XbPP/DRkyZDyKUWsGFLfER+eTFTJkyJjN6I+O8f5Dfzis1ciUIUPG8xg/9k1LqanrpH0AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
