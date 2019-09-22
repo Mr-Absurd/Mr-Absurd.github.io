@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     
     
-    <title>Nginx系列二 Nginx安装 | Hexo</title>
+    <title>Nginx系列三 正则表达式 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Nginx,安装">
+    <meta name="keywords" content="Nginx,正则表达式">
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css?v=1.4.3">
@@ -132,7 +132,7 @@
           <i class="icon icon-lg icon-navicon"></i>
         </a>
         <div class="flex-col header-title ellipsis">
-            <span>Nginx系列二 Nginx安装</span>
+            <span>Nginx系列三 正则表达式</span>
             
         </div>
         
@@ -145,11 +145,11 @@
 <header class="content-header post-header">
     <img src="/img/banner.jpg" class="header-bg">
     <div class="container fade-scale">
-        <h1 class="title">Nginx系列二 Nginx安装</h1>
+        <h1 class="title">Nginx系列三 正则表达式</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-09-20T08:51:22.000Z" itemprop="datePublished" class="page-time">
-  2019-09-20
+                <time datetime="2019-09-22T02:01:59.000Z" itemprop="datePublished" class="page-time">
+  2019-09-22
 </time>
 
 
@@ -178,12 +178,12 @@
 
 
 <div class="container body-wrap">
-    <article id="post-Nginx系列二-Nginx安装"
+    <article id="post-Nginx系列三-正则表达式"
   class="post-article article-type-post" itemprop="blogPost">
     <div class="post-card">
-        <h1 class="post-card-title">Nginx系列二 Nginx安装</h1>
+        <h1 class="post-card-title">Nginx系列三 正则表达式</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-09-20 16:51:22" datetime="2019-09-20T08:51:22.000Z"  itemprop="datePublished">2019-09-20</time>
+            <time class="post-time" title="2019-09-22 10:01:59" datetime="2019-09-22T02:01:59.000Z"  itemprop="datePublished">2019-09-22</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Nginx/">Nginx</a></li></ul>
@@ -199,52 +199,193 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             
-            <p><strong>1.安装编译工具及库文件</strong></p>
-<p>yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel</p>
-<p><strong>2.安装PCRE</strong></p>
-<p>下载 PCRE 安装包，下载地址：<a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz" target="_blank" rel="noopener">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz</a></p>
-<p>cd /home/src</p>
-<p>wget <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz" target="_blank" rel="noopener">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz</a> （安装wget：yum -y install wget）</p>
-<p>tar -zxvf pcre-8.37.tar.gz（解压缩pcre）</p>
-<p>cd pcre-8.39</p>
-<p>./configure</p>
-<p>make &amp;&amp; make install</p>
-<p><strong>3.安装Nginx</strong></p>
-<p>下载nginx</p>
-<p>cd /home/src</p>
-<p>wget <a href="http://nginx.org/download/nginx-1.16.0.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.16.0.tar.gz</a></p>
-<p>tar -zxvf nginx-1.16.0.tar.gz</p>
-<p>cd nginx-1.16.0</p>
-<p>指定目录安装：</p>
-<p>./configure –prefix=/home/webserver/nginx –with-http_stub_status_module –with-http_ssl_module –with-pcre=/home/src/pcre-8.39</p>
-<p>make</p>
-<p>make install</p>
-<p><strong>4.nginx启动关闭重启</strong></p>
-<p>启动（安装目录 -c nginx配置文件地址）</p>
-<p>./sbin/nginx -c /home/webserver/nginx/conf/nginx.conf</p>
-<p> 访问nginx的ip出现以下界面为部署成功</p>
-<figure class="image-box">
-                <a rel=Nginx系列二 Nginx安装 href="1.png" title="" data-fancybox="images"><img src="1.png" alt title class></a>
-                <p></p>
-            </figure>
-
-<p>停止</p>
-<p>ps -ef|grep nginx</p>
-<figure class="image-box">
-                <a rel=Nginx系列二 Nginx安装 href="2.png" title="" data-fancybox="images"><img src="2.png" alt title class></a>
-                <p></p>
-            </figure> 
-
-<p>杀死进程</p>
-<p>kill -QUIT 2072</p>
-<p>或者强制停止</p>
-<p>pkill -9 nginx</p>
-<p>重启</p>
-<p>cd /home/webserver/nginx/sbin</p>
-<p>–验证配置文件是否正确</p>
-<p>./nginx -t（若出现successfull则正确）</p>
-<p>–重启</p>
-<p>./nginx -s reload</p>
+            <h2 id="正则表达式基础结构"><a href="#正则表达式基础结构" class="headerlink" title="正则表达式基础结构"></a>正则表达式基础结构</h2><p>元字符＋文本字符</p>
+<p><strong>常用元字符</strong></p>
+<p><strong>定位符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">定位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">^</td>
+<td align="center">以什么字符串开头</td>
+<td align="center">^linux window</td>
+<td align="center"><strong>linux</strong> window</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">以什么字符串结束</td>
+<td align="center">linux window$</td>
+<td align="center">linux <strong>window</strong></td>
+</tr>
+</tbody></table>
+<p><strong>选择符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">选择符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">|</td>
+<td align="center">相当于或</td>
+<td align="center">linux|window</td>
+<td align="center"><strong>linux window</strong></td>
+</tr>
+</tbody></table>
+<p><strong>字符范围</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">示例</th>
+<th align="center">说明</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">[abc]</td>
+<td align="center">匹配字符abc</td>
+<td align="center"><strong>abc</strong>def</td>
+</tr>
+<tr>
+<td align="center">[^abc]</td>
+<td align="center">匹配除abc以外的</td>
+<td align="center">abc<strong>def</strong></td>
+</tr>
+<tr>
+<td align="center">[a-z]</td>
+<td align="center">匹配a到z的字符</td>
+<td align="center"><strong>abcdef</strong></td>
+</tr>
+</tbody></table>
+<p><strong>点字符和限定字符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">点字符和限定符</th>
+<th align="center">说明</th>
+<th align="center">示例</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.</td>
+<td align="center">匹配任意一个字符</td>
+<td align="center">t.a</td>
+<td align="center">可匹配tea,taa,tca</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="center">匹配零或一个</td>
+<td align="center">t?a</td>
+<td align="center">可匹配a,ta</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">匹配一个或多个</td>
+<td align="center">t+a</td>
+<td align="center">可匹配ta,tta,ttta</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">匹配零个或多个</td>
+<td align="center">t*a</td>
+<td align="center">可匹配a,ta,tta</td>
+</tr>
+<tr>
+<td align="center">{n}</td>
+<td align="center">匹配前面字符n次</td>
+<td align="center">t{2}a</td>
+<td align="center">可匹配tta</td>
+</tr>
+<tr>
+<td align="center">{n,}</td>
+<td align="center">匹配前面字符字符最少次</td>
+<td align="center">t{2,}a</td>
+<td align="center">可匹配tta,ttta</td>
+</tr>
+<tr>
+<td align="center">{n,m}</td>
+<td align="center">匹配最少n次最多m次</td>
+<td align="center">t{1,2}a</td>
+<td align="center">可匹配ta,tta</td>
+</tr>
+</tbody></table>
+<p><strong>小括号</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">字符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">()</td>
+<td align="center">被包裹住的相当于一个字符,一个判断范围</td>
+</tr>
+</tbody></table>
+<p><strong>反斜线</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">字符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\d</td>
+<td align="center">任意一个十进制数字</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td align="center">任意一个非十进制数字</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="center">任意一个单词字符</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td align="center">任意一个非单词字符</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td align="center">任意一个空白字符</td>
+</tr>
+<tr>
+<td align="center">\S</td>
+<td align="center">任意一个非空白字符</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="center">单词分界符</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td align="center">非单词分界符</td>
+</tr>
+<tr>
+<td align="center">\x</td>
+<td align="center">16进制</td>
+</tr>
+</tbody></table>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p><strong>^[1-9]\d*$</strong></p>
+<p>^以什么开头,[1-9]匹配1到9,\d*任意多个十进制,$结尾</p>
+<p>所以这个是匹配的是第一位是数字1到9开头,后面可以是任意位的十进制数字,并且结尾.</p>
+<p>既&gt;0的所有十进制数,既正整数(^-[1-9]\d*$为负整数)</p>
+<p><strong>^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$</strong></p>
+<p>^[1-9]\d*这个很熟悉是上面那个匹配正整数,\.\d*注意这个点他被转义了所以他代表仅仅是一个字符.\d<em>任意个十进制数.</em></p>
+<p><em>|是或,</em></p>
+<p><em>0\.\d\</em>[1-9]\d* *      0\.零开头后面是个’ . ‘,/d*任意多个十进制数,[0-9]是0到9的数字.</p>
+<p>两个合起来就是判断浮点数.</p>
 
         </div>
         
@@ -252,12 +393,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-09-22T01:57:45.719Z" itemprop="dateUpdated">2019-09-22 09:57:45</time>
+    最后更新时间：<time datetime="2019-09-22T14:11:12.588Z" itemprop="dateUpdated">2019-09-22 22:11:12</time>
 </span><br>
 
 
         
-        转载注明出处，原文地址：<a href="/2019/09/20/Nginx系列二-Nginx安装/" target="_blank" rel="external">http://mr-absurd.com/2019/09/20/Nginx系列二-Nginx安装/</a>
+        转载注明出处，原文地址：<a href="/2019/09/22/Nginx系列三-正则表达式/" target="_blank" rel="external">http://mr-absurd.com/2019/09/22/Nginx系列三-正则表达式/</a>
         
     </div>
     <footer>
@@ -271,7 +412,7 @@
         
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安装/">安装</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
 
             <div class="page-share-wrap">
     
@@ -280,7 +421,7 @@
     <ul class="reset share-icons">
       
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/09/20/Nginx系列二-Nginx安装/&title=《Nginx系列二 Nginx安装》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/09/22/Nginx系列三-正则表达式/&title=《Nginx系列三 正则表达式》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -292,7 +433,7 @@
       </li>
       
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/09/20/Nginx系列二-Nginx安装/&title=《Nginx系列二 Nginx安装》 — Hexo&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/09/22/Nginx系列三-正则表达式/&title=《Nginx系列三 正则表达式》 — Hexo&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -315,21 +456,14 @@
         
     </div>
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="prev">
-      <a href="/2019/09/22/Nginx系列三-正则表达式/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Nginx系列三 正则表达式</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="next">
-      <a href="/2019/09/20/nginx系列一-nginx简介/" id="post-next" class="post-nav-link">
+      <a href="/2019/09/20/Nginx系列二-Nginx安装/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Nginx系列一 Nginx简介</h4>
+        <h4 class="title">Nginx系列二 Nginx安装</h4>
       </a>
     </div>
   
@@ -337,6 +471,14 @@
 
 
     
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正则表达式基础结构"><span class="post-toc-number">1.</span> <span class="post-toc-text">正则表达式基础结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">2.</span> <span class="post-toc-text">例子</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
     
 </article>
 
@@ -389,7 +531,7 @@
     <ul class="reset share-icons">
       
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/09/20/Nginx系列二-Nginx安装/&title=《Nginx系列二 Nginx安装》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://mr-absurd.com/2019/09/22/Nginx系列三-正则表达式/&title=《Nginx系列三 正则表达式》 — Hexo&pic=http://mr-absurd.com/img/avater.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -401,7 +543,7 @@
       </li>
       
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/09/20/Nginx系列二-Nginx安装/&title=《Nginx系列二 Nginx安装》 — Hexo&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://mr-absurd.com/2019/09/22/Nginx系列三-正则表达式/&title=《Nginx系列三 正则表达式》 — Hexo&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -413,7 +555,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aSW7DMAwF0N7/0um2QBPlk3RaWHpaBc5gPS8Ycfj6itfjx/p9ZfLu+i4XLwwMjNsyHsvV2/T69+f3fULFwMA4gPEqgr16nVxZ32XNzveGgYGB0dvW+pBXDeUYGBgYk4DbvGXwODAwMDB6SWyv6jWBfSQXx8DAuCEj39zfv/5IfwMDA+NWjEdx9UJttXlZ3hUGBsbWjDzAVVPW5GiYN0GTX8DAwNiVMRpuiDG9sJu3OTEwMM5hNKP1IGTnJbY3LQQMDIwDGJPiVxJY84ZlNaA3a4EYGBg3ZFSPYnnLM09lJw8CAwNjb8b6o/ODY/Ldy3qwGBgYhzGqBbL8SnX4LPk1DAyMvRn/VSZLnu463D9pYWJgYGzKqHYAJ03H6uhGcmAtT3lgYGDckJEHtWqim280HzV787+BgYGxKaNa9qq2Oedjr81eBwYGxmGM6hYnQxv59ag9gIGBsQUjb0/mJf7eqFm1UYqBgXEO46qmY/756vGxMGqGgYFxGKMaIpPCXH7Ua5bhMDAwDmaMjmsXtRDKWTgGBsamjHmSWU2Geyl0NDOCgYGxEeNRXEmi23s01UFYDAyMcxi9c1fOmzRH89IbBgbGCYx5M7LXDOgFYgwMjJMZk8CXNy+TLY5SWQwMDIzgdJlvLqEWinoYGBgYl452VdsP0QEUAwPjAMZkJGKS1uZluzffwsDA2JqRp469wlm1bXnV3wAGBsYWjG8YFSy6a+bZCwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3ay47bMBAEQP//TztATgkC2d0zor0BSidh1w8WDZCjHj4e8fX8fV39/c//Pv+5Xr+r/eTHiQsPDw9vNPSrKxlQO4jku9pJvJwsPDw8vGO815vB6/uc3S737bvw8PDwfhovYWw+OX8NHh4e3v/ImxXWyUK/2U7w8PDwPslrA4JNWNBuLR/KWvDw8PBiXtsA+wn3B/t7eHh4eIuu+qxN1Q4rL7LrceLh4eEd4O3j2ra0veugQBHv4uHh4d3KmwWj+bGqNraYhciX48HDw8P7Em/f+M9TgmRzKn4MPDw8vGO8trHUNpxmQ8/bZpfTjYeHh3eMN6tC20h3VjTnsDf7Hh4eHt4HeW0osEmUZyFylE/j4eHh3crLy+K7WmKzQjwf8+UTAx4eHt6a14a2OXi2rM9eM4tI8PDw8Da8vPzdFM35gt6GIG9+Nzw8PLwDvLyYzqPVDb4tl2sSHh4e3prXlq35Ut4u3O0URDEHHh4e3gFeXljPNo92I9kU96vnBjw8PLzgu2YLfdtwyhfx2QRd3uPh4eEd47WHn9qiOY8PEnzx7Xh4eHjHeHlrfxb+zl4zC3wvS2o8PDy8A7wkSL0L8KYUju/fjAQPDw/vGK9FJuFCe3Bqttnc8MSAh4eHt+DNWlCzQjn5tPzA1uVWh4eHh3eAlyzc7WaQl9oJZlOU4+Hh4Z3gJQO6a+aik1+LLaE4s4CHh4e34M0C3GS4dx1CnY0/inTx8PDwRrxneSXldd7EaoPg5F1//QUPDw/vAK9ddpOSd7PQJ9N64ogYHh4eXsubtcHa5/22hZY/Exw5QICHh4cX8GZxahvI3nsMq9gY8PDw8L7KyxfutunVFutRAIGHh4f3Vd7scNU+9m1Hi4eHh/cZ3qzp1S7r+2ltS388PDy8E7zVo37c0NofGthPKB4eHt6a9wuLrwMne1c1eAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
